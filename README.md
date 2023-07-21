@@ -23,11 +23,27 @@ Kittygramm владельцам котиков позволяет размеща
 В папке kittygram_final выполните команду docker compose up -d.
 
 Выполните миграции и сбор статики:
+```
+Отправьте собранные образы фронтенда, бэкенда и Nginx на Docker Hub:
+docker build -t alex886/kittygram_frontend .
+docker push alex886/kittygram_frontend
+docker build -t alex886/kittygram_backend .
+docker push alex886/kittygram_backend
+docker build -t alex886/kittygram_nginx .
+docker push alex886/kittygram_nginx
+```
+
+```
+Имя файла указывается после ключа -f.
+
+docker compose -f docker-compose.production.yml up
+```
 
 ```yaml
 docker compose -f docker-compose.production.yml exec backend python manage.py migrate
 docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
 ```
+
 
 Проект станет доступен по адресу 127.0.0.1:9000.
 
