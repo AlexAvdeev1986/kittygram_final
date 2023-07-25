@@ -66,7 +66,3 @@ http://localhost:9000/
 ```bash
 sudo docker compose -f docker-compose.yml down
 ```
-
-## Автор
-
-Михайлов Александр https://t.me/MihailovAlexander
