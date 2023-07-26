@@ -29,8 +29,8 @@ docker build -t alex886/kittygram_frontend .
 docker push alex886/kittygram_frontend
 docker build -t alex886/kittygram_backend .
 docker push alex886/kittygram_backend
-docker build -t alex886/kittygram_nginx .
-docker push alex886/kittygram_nginx
+docker build -t alex886/kittygram_gateway .
+docker push alex886/kittygram_gateway
 ```
 
 ```
@@ -40,8 +40,11 @@ docker compose -f docker-compose.production.yml up
 ```
 
 ```yaml
-docker compose -f docker-compose.production.yml exec backend python manage.py migrate
-docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
+sudo docker compose -f docker-compose.production.yml exec backend python manage.py migrate
+
+sudo docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
+
+sudo docker compose -f kittygram_workflow.yml exec backend cp -r /app/collected_static/. /static/static/
 ```
 
 
