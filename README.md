@@ -143,7 +143,6 @@ key NRjeSf
     USER                           # имя пользователя
     SSH_KEY                        # приватный ssh-ключ (cat ~/.ssh/id_rsa)
     SSH_PASSPHRASE                 # кодовая фраза (пароль) для ssh-ключа
-
     TELEGRAM_TO                    # id телеграм-аккаунта (можно узнать у @userinfobot, команда /start)
     TELEGRAM_TOKEN                 # токен бота (получить токен можно у @BotFather, /token, имя бота)
     ```
