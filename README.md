@@ -76,7 +76,9 @@ key NRjeSf
     * username — ваше имя пользователя на сервере;
     * server_ip — IP вашего сервера.g
 
-Пример : scp -i /home/user/.ssh/id_rsa docker-compose.production.yml user@example.com:/home/user/kittygram/docker-compose.production.yml
+ scp -i /home/ea703557/Загрузки/555/yc-ea703557 docker-compose.production.yml  yc-user@158.160.28.33:/home/yc-user/kittygram/docker-compose.production.yml
+
+ scp -i /home/ea703557/Загрузки/555/yc-ea703557 .env  yc-user@158.160.28.33:/home/yc-user/kittygram/.env
     ```
 
 5. Запустите docker compose в режиме демона:
