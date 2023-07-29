@@ -1,0 +1,71 @@
+# /etc/nginx/sites-enabled/default
+#Taski
+server {
+    server_tokens   off;
+    server_name taski.onthewifi.com;
+
+    location / {
+        proxy_set_header Host $http_host;
+        proxy_pass http://127.0.0.1:8000;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/taski.onthewifi.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/taski.onthewifi.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+server {
+    if ($host = taski.onthewifi.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    listen 80;
+    server_name 51.250.24.131 taski.onthewifi.com;
+    return 404; # managed by Certbot
+
+
+}
+
+
+#Kittygram
+server {
+    server_tokens    off;
+    client_max_body_size 20M;
+    server_name cute-kittygram.ddns.net;
+
+    location / {
+        proxy_set_header Host $http_host;
+        proxy_pass http://127.0.0.1:9000;
+    }
+
+
+    listen 443 ssl; # managed by Certbot$
+    ssl_certificate /etc/letsencrypt/live/cute-kittygram.ddns.net/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/cute-kittygram.ddns.net/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+server {
+    if ($host = cute-kittygram.ddns.net) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    listen 80;
+    server_name 51.250.24.131, cute-kittygram.ddns.net;
+    return 404; # managed by Certbot
+
+
+}
