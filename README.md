@@ -74,9 +74,9 @@ key NRjeSf
     * ath_to_SSH — путь к файлу с SSH-ключом;
     * SSH_name — имя файла с SSH-ключом (без расширения);
     * username — ваше имя пользователя на сервере;
-    * server_ip — IP вашего сервера.
+    * server_ip — IP вашего сервера.g
 
-пример : scp -i /home/user/.ssh/id_rsa docker-compose.production.yml user@example.com:/home/user/kittygram/docker-compose.production.yml
+Пример : scp -i /home/user/.ssh/id_rsa docker-compose.production.yml user@example.com:/home/user/kittygram/docker-compose.production.yml
     ```
 
 5. Запустите docker compose в режиме демона:
