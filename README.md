@@ -120,6 +120,17 @@ key NRjeSf
     nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
     nginx: configuration file /etc/nginx/nginx.conf test is successful
     ```
+    server {
+    server_tokens    off;
+    client_max_body_size 20M;
+    server_name 158.160.28.33, cute-kittygram.ddns.net;
+
+    location / {
+        proxy_set_header Host $http_host;
+        proxy_pass http://127.0.0.1:9000;
+
+        }
+}
 
 10. Перезапускаем Nginx
     ```bash
