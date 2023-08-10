@@ -12,7 +12,7 @@ Kittygram - сервис для любителей котиков.
 1. Клонируйте репозиторий на свой компьютер:
 
     ```bash
-    git clone https://github.com/ShunyaBo/kittygram_final.git
+    git clone https://github.com/AlexAvdeev1986/kittygram_final.git
     ```
     ```bash
     cd kittygram_final
