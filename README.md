@@ -75,6 +75,11 @@ key NRjeSf
     * SSH_name — имя файла с SSH-ключом (без расширения);
     * username — ваше имя пользователя на сервере;
     * server_ip — IP вашего сервера.g
+    ```bash
+    ssh -i /home/ea703557/Загрузки/555/yc-ea703557 yc-user@158.160.28.33
+key NRjeSf
+ имя_пользователя@ip_адрес_сервера 
+    ```
 
  scp -i /home/ea703557/Загрузки/555/yc-ea703557 docker-compose.production.yml  yc-user@158.160.28.33:/home/yc-user/kittygram/docker-compose.production.yml
 
@@ -96,7 +101,11 @@ key NRjeSf
     ```
 
 7. На сервере в редакторе nano откройте конфиг Nginx:
-
+```bash
+    ssh -i /home/ea703557/Загрузки/555/yc-ea703557 yc-user@158.160.28.33
+key NRjeSf
+ имя_пользователя@ip_адрес_сервера 
+    ```
     ```bash
     sudo nano /etc/nginx/sites-enabled/default
     ```
@@ -123,7 +132,7 @@ key NRjeSf
     server {
     server_tokens    off;
     client_max_body_size 20M;
-    server_name 158.160.28.33, cute-kittygram.ddns.net;
+    server_name 158.160.28.33, alex86kittygram444.ddns.net;
 
     location / {
         proxy_set_header Host $http_host;
