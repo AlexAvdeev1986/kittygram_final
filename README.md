@@ -39,6 +39,7 @@ Kittygram - сервис для любителей котиков.
     docker push alex886/kittygram_frontend:latest
     docker push alex886/kittygram_backend:latest
     docker push alex886/kittygram_gateway:latest
+    docker-compose up -d --build
     ```
 
 ### Деплой на сервере
