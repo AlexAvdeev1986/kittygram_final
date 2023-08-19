@@ -74,6 +74,7 @@ key NRjeSf
 
     ```bash
     sudo apt update
+    sudo apt --fix-broken install
     sudo apt install curl
     curl -fSL https://get.docker.com -o get-docker.sh
     sudo sh ./get-docker.sh
