@@ -25,10 +25,10 @@ Kittygram - сервис для любителей котиков.
 1.  Замените username на ваш логин на DockerHub:
 
     ```bash
+    cd ../backend
+    docker build -t alex886/kittygram_backend:latest .
     cd frontend
     docker build -t alex886/kittygram_frontend:latest .
-    cd ../backend
-    docker build -t alex886/alex886/kittygram_backend:latest .
     cd ../nginx
     docker build -t alex886/kittygram_gateway:latest .
     ```
@@ -36,8 +36,8 @@ Kittygram - сервис для любителей котиков.
 2. Загрузите образы на DockerHub:
 
     ```bash
-    docker push alex886/kittygram_frontend:latest
     docker push alex886/kittygram_backend:latest
+    docker push alex886/kittygram_frontend:latest
     docker push alex886/kittygram_gateway:latest
     docker-compose up -d --build
     ```
