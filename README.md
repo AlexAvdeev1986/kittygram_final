@@ -51,7 +51,6 @@ ALLOWED_HOSTS='your_domain'
     docker push alex886/kittygram_backend:latest
     docker push alex886/kittygram_frontend:latest
     docker push alex886/kittygram_gateway:latest
-    docker-compose up -d --build
     ```
 
 ### Деплой на сервере
