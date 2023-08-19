@@ -18,7 +18,19 @@ Kittygram - сервис для любителей котиков.
     cd kittygram_final
     ```
 2. Создайте файл .env и заполните его своими данными. Перечень данных указан в корневой директории проекта в файле .env.example.
+Fill it with your data
 
+# Database Secrets
+POSTGRES_USER=[database_username]
+POSTGRES_PASSWORD=[database_password]
+POSTGRES_DB=[database_name]
+DB_PORT=[database_connection_port]
+DB_HOST=[db]
+
+# Django Secrets
+SECRET_KEY='SECRET_KEY'
+DEBUG=False
+ALLOWED_HOSTS='your_domain'
 
 ### Создание Docker-образов
 
