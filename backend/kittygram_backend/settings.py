@@ -1,17 +1,19 @@
 # flake8: noqa
 import os
+import distutils.util
 from pathlib import Path
-from dotenv import load_dotenv
 
-load_dotenv()
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY', 'ggrrgttht')
+load_dotenv()
+
+SECRET_KEY = 'django-insecure-r4g@r7)c7)2v1ex(9x(3$!v(ajk++61*t6r4(-l&f&@t*981j$'
 
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = ['158.160.28.33', '127.0.0.1', 'localhost', 'kirrygram.ddns.net']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -64,7 +66,7 @@ DATABASES = {
         'USER': os.getenv('POSTGRES_USER', 'django'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', ''),
         'HOST': os.getenv('DB_HOST', ''),
-        'PORT': os.getenv('DB_PORT', 5432),
+        'PORT': os.getenv('DB_PORT', 5432)
     }
 }
 
@@ -102,9 +104,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'collected_static'
 
 MEDIA_URL = '/media/'
-
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_ROOT = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
