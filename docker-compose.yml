@@ -1,7 +1,7 @@
 version: '3'
-  
+
 volumes:
-  kittygram_pg_data:
+  kitty-docker_pg_data_production:
   static:
   media:
 
@@ -9,29 +9,28 @@ services:
   db:
     image: postgres:13
     env_file: .env
-    ports:
-      - "5432:5432"
     volumes:
-      - kittygram_pg_data:/var/lib/postgresql/data
+      - kitty-docker_pg_data_production:/var/lib/postgresql/data
   backend:
     build: ./backend/
     env_file: .env
-    depends_on:
-      - db
     volumes:
       - static:/backend_static
-      - media:/media
+      - media:/media/
+    depends_on:
+      - db
   frontend:
     env_file: .env
     build: ./frontend/
-    command: cp -r /app/build/. /static/
+    command: cp -r /app/build/. /frontend_static/
     volumes:
-      - static:/static
+      - static:/frontend_static
   gateway:
     build: ./nginx/
+    # image: alex886/kitty_gateway
     env_file: .env
-    volumes:
-      - static:/staticfiles/
-      - media:/media
     ports:
       - 9000:80
+    volumes:
+      - static:/staticfiles/
+      - media:/media/
