@@ -160,3 +160,4 @@ def test_kittygram_api_available(
     expected_status = HTTPStatus.BAD_REQUEST
     assert response.status_code == expected_status, assert_msg
     assert 'password' in response.json(), assert_msg
+    
