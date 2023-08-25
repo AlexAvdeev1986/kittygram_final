@@ -126,10 +126,10 @@ docker system prune -a
 
 Список:
 
-docker images -a
+sudo docker images -a
 Удаление:
 
-docker rmi Image Image
+sudo docker rmi Image Image
 Удаление образов, не привязанных к контейнеру
 Образы Docker состоят из нескольких слоев. Несвязанные образы — это слои, не имеющие связей с каким-либо образами с тегами. У них нет никакого назначения, и они просто занимают место на диске. Их можно найти, добавив флаг фильтра -f со значением dangling=true в команду docker images. Если вы уверены, что хотите удалить их, вы можете использовать команду docker images purge:
 
@@ -137,7 +137,7 @@ docker rmi Image Image
 
 Список:
 
-docker images -f dangling=true
+sudo docker images -f dangling=true
 Удаление:
 
-docker images purge
+sudo docker images purge
