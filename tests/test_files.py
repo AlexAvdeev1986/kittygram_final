@@ -87,3 +87,4 @@ def test_requirements_location(backend_dir_info: tuple[Path, str]):
         f'Убедитесь, что директория {relative_backend_path} содержит файл '
         f'зависимостей `{requirements_file_name}`.'
     )
+    
