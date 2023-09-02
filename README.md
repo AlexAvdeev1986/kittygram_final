@@ -165,6 +165,7 @@ sudo snap refresh
 При успешной установке зависимостей в терминале выведется:
 core 16-2.58.2 from Canonical✓ installed 
 Установка пакета certbot.
+
 sudo snap install --classic certbot
 При успешной установке пакета в терминале выведется:
 certbot 2.3.0 from Certbot Project (certbot-eff✓) installed
@@ -175,3 +176,17 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 sudo certbot --nginx
 Перезапускаем NGINX
 sudo systemctl reload nginx
+
+
+Запустите SSH-агент: Убедитесь, что SSH-агент запущен на вашем локальном компьютере и в него добавлен ваш приватный ключ с помощью ssh-add ...
+
+chmod 600 yc-ea703557
+ssh-add yc-ea703557
+
+chmod 600 authorized_keys
+
+eval "$(ssh-agent -s)"
+
+ssh-add 
+
+ssh-add ~/.ssh/authorized_keys 
