@@ -37,20 +37,20 @@ ALLOWED_HOSTS='your_domain'
 1.  Замените username на ваш логин на DockerHub:
 
     ```bash
-    cd ../backend
-    docker build -t alex886/kittygram_backend:latest .
+    cd backend
+    docker build -t alex886/kittygram_backend .
     cd frontend
-    docker build -t alex886/kittygram_frontend:latest .
+    docker build -t alex886/kittygram_frontend .
     cd ../nginx
-    docker build -t alex886/kittygram_gateway:latest .
+    docker build -t alex886/kittygram_gateway .
     ```
 
 2. Загрузите образы на DockerHub:
 
     ```bash
-    docker push alex886/kittygram_backend:latest
-    docker push alex886/kittygram_frontend:latest
-    docker push alex886/kittygram_gateway:latest
+    docker push alex886/kittygram_backend
+    docker push alex886/kittygram_frontend
+    docker push alex886/kittygram_gateway
     ```
 
 ### Деплой на сервере
@@ -156,7 +156,10 @@ sudo systemctl start nginx
 У этого пакетного менеджера есть нужный вам пакет — certbot.
 sudo apt install snapd
 Установка и обновление зависимостей для пакетного менеджера snap.
-sudo snap install core; sudo snap refresh core
+sudo snap install core; 
+
+sudo snap refresh core
+
 sudo snap refresh
 
 При успешной установке зависимостей в терминале выведется:
