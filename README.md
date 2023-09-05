@@ -156,33 +156,38 @@ server {
 Сохраняем изменения и выходим из редактора
 Проверяем корректность настроек
 sudo nginx -t
+
 Запускаем NGINX
 sudo systemctl start nginx
-Настраиваем HTTPS
+
+Настраиваем HTTPS на сервере
 Установка пакетного менеджера snap.
 У этого пакетного менеджера есть нужный вам пакет — certbot.
-sudo apt install snapd
-Установка и обновление зависимостей для пакетного менеджера snap.
-sudo snap install core; 
+Шаг 1. Установка certbot
+Чтобы установить certbot, вам понадобится пакетный менеджер snap. Установите его командой:
+sudo apt install snapd 
+Далее сервер, скорее всего, попросит вам перезагрузить операционную систему. Сделайте это, а потом последовательно выполните команды:
+# Установка и обновление зависимостей для пакетного менеджера snap.
+sudo snap install core; sudo snap refresh core
+# При успешной установке зависимостей в терминале выведется:
+# core 16-2.58.2 from Canonical✓ installed 
 
-sudo snap refresh core
-
-sudo snap refresh
-
-При успешной установке зависимостей в терминале выведется:
-core 16-2.58.2 from Canonical✓ installed 
-Установка пакета certbot.
-
+# Установка пакета certbot.
 sudo snap install --classic certbot
-При успешной установке пакета в терминале выведется:
-certbot 2.3.0 from Certbot Project (certbot-eff✓) installed
-Создание ссылки на certbot в системной директории,
-Чтобы у пользователя с правами администратора был доступ к этому пакету.
-sudo ln -s /snap/bin/certbot /usr/bin/certbot
-Получаем сертификат и настраиваем NGINX следуя инструкциям
-sudo certbot --nginx
-Перезапускаем NGINX
-sudo systemctl reload nginx
+# При успешной установке пакета в терминале выведется:
+# certbot 2.3.0 from Certbot Project (certbot-eff✓) installed
+
+# Создание ссылки на certbot в системной директории,
+# чтобы у пользователя с правами администратора был доступ к этому пакету.
+sudo ln -s /snap/bin/certbot /usr/bin/certbot 
+Шаг 2. Запускаем certbot и получаем SSL-сертификат
+Чтобы начать процесс получения сертификата, введите команду:
+sudo certbot --nginx 
+
+Откройте файл nano /etc/nginx/sites-enabled/default и убедитесь в этом:
+
+Перезагрузите конфигурацию Nginx:
+sudo systemctl reload nginx 
 
 
 Запустите SSH-агент: Убедитесь, что SSH-агент запущен на вашем локальном компьютере и в него добавлен ваш приватный ключ с помощью ssh-add ...
