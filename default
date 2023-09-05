@@ -27,7 +27,7 @@ server {
 
 
     listen 80;
-    server_name 158.160.28.33 alextaski333.ddns.net;
+    server_name 51.250.24.131 alextaski333.ddns.net;
     return 404; # managed by Certbot
 
 
@@ -64,7 +64,7 @@ server {
 
 
     listen 80;
-    server_name 158.160.28.33, alex86kittygram444.ddns.net;
+    server_name 51.250.24.131, alex86kittygram444.ddns.net;
     return 404; # managed by Certbot
 
 
