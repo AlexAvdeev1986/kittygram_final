@@ -112,6 +112,13 @@ sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/col
 sudo docker compose -f docker-compose.production.yml exec backend python manage.py createsuperuser
 
     ```
+Certbot - это инструмент, разработанный Let's Encrypt, который упрощает получение и установку SSL-сертификатов. Вы можете установить Certbot на своем сервере с помощью команды:
+sql
+Copy code
+sudo apt update 
+sudo apt-get install python3-certbot-nginx
+sudo apt install certbot
+
 
 7. На сервере в редакторе nano откройте конфиг Nginx:
 ```bash
