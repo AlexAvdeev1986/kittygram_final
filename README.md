@@ -52,7 +52,7 @@ ALLOWED_HOSTS='your_domain'
     docker push alex886/kittygram_frontend
     docker push alex886/kittygram_gateway
     ```
-
+    
 ### Деплой на сервере
 
 1. Подключитесь к удаленному серверу
@@ -157,8 +157,6 @@ server {
 Сохраняем изменения и выходим из редактора
 Проверяем корректность настроек
 sudo nginx -t
-
-
 
 Запускаем NGINX
 sudo systemctl start nginx
