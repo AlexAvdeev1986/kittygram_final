@@ -38,21 +38,21 @@ ALLOWED_HOSTS='your_domain'
 
     ```bash
     cd backend
-    docker build -t alex886/kittygram_backend .
+    docker build -t alex886/kittygram_backend:latest .
     cd frontend
-    docker build -t alex886/kittygram_frontend .
+    docker build -t alex886/kittygram_frontend:latest .
     cd ../nginx
-    docker build -t alex886/kittygram_gateway .
+    docker build -t alex886/kittygram_gateway:latest .
     ```
 
 2. Загрузите образы на DockerHub:
 
     ```bash
-    docker push alex886/kittygram_backend
-    docker push alex886/kittygram_frontend
-    docker push alex886/kittygram_gateway
+    docker push alex886/kittygram_backend:latest
+    docker push alex886/kittygram_frontend:latest
+    docker push alex886/kittygram_gateway:latest
     ```
-    
+    sudo docker container ls
 ### Деплой на сервере
 
 1. Подключитесь к удаленному серверу
