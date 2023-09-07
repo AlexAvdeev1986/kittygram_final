@@ -1,12 +1,11 @@
 # /etc/nginx/sites-enabled/default
 #Taski
-  GNU nano 6.2                                                                          /etc/nginx/sites-enabled/default                                                                                    
 server {
 
     root /var/www/html;
     index index.html index.htm;
 
-    server_name  alextaski333.ddns.net;
+    server_name alextaski333.ddns.net;
 
     location / {
         proxy_set_header Host $http_host;
@@ -15,10 +14,12 @@ server {
 
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/alextaski333.ddns.net/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/alextaski333.ddns.net/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/alex86kittygram444.ddns.net/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/alex86kittygram444.ddns.net/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
 
 }
 server {
@@ -30,16 +31,18 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server;
 
-    server_name  alextaski333.ddns.net;
+    server_name alextaski333.ddns.net;
     return 404; # managed by Certbot
 
 
 }
 
 
+
+#kittygram
 #kittygram
 server {
-server_name  alex86kittygram444.ddns.net;
+server_name alex86kittygram444.ddns.net;
 server_tokens off;
 
 location / {
@@ -55,6 +58,8 @@ location / {
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
+
+
 }
 server {
     if ($host = alex86kittygram444.ddns.net) {
@@ -63,9 +68,10 @@ server {
 
 
 listen 80;
-server_name  alex86kittygram444.ddns.net;
+server_name alex86kittygram444.ddns.net;
     return 404; # managed by Certbot
 
 
 }
+
 
