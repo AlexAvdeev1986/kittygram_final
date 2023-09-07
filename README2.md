@@ -12,7 +12,7 @@ key NRjeSf
 ```sudo nano /etc/nginx/sites-enabled/default```:
 
 server {
-server_name 158.160.28.33 alex86kittygram444.ddns.net;
+server_name alex86kittygram444.ddns.net;
 server_tokens off;
 
 location / {
@@ -36,7 +36,7 @@ server {
 
 
 listen 80;
-server_name 158.160.28.33 alex86kittygram444.ddns.net;
+server_name alex86kittygram444.ddns.net;
     return 404; # managed by Certbot
 
 

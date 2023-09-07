@@ -186,7 +186,7 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 
 sudo certbot --nginx 
 
-Откройте файл nano /etc/nginx/sites-enabled/default и убедитесь в этом:
+Откройте файл sudo nano /etc/nginx/sites-enabled/default и убедитесь в этом:
 
 Перезагрузите конфигурацию Nginx:
 sudo systemctl reload nginx 
