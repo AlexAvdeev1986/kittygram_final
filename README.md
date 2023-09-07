@@ -158,8 +158,14 @@ server {
 Проверяем корректность настроек
 sudo nginx -t
 
+
+
 Запускаем NGINX
 sudo systemctl start nginx
+
+Перезапускаем Nginx
+
+sudo service nginx reload
 
 Настраиваем HTTPS на сервере
 Установка пакетного менеджера snap.
