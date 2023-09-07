@@ -143,6 +143,7 @@ sudo ufw enable
 Открываем конфигурационный файл NGINX
 sudo nano /etc/nginx/sites-enabled/default
 Полностью удаляем из него все и пишем новые настройки
+
 server {
     listen 80;
     server_name example.com;
@@ -182,12 +183,25 @@ sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot 
 Шаг 2. Запускаем certbot и получаем SSL-сертификат
 Чтобы начать процесс получения сертификата, введите команду:
+
 sudo certbot --nginx 
 
 Откройте файл nano /etc/nginx/sites-enabled/default и убедитесь в этом:
 
 Перезагрузите конфигурацию Nginx:
 sudo systemctl reload nginx 
+
+
+Чтобы узнать актуальный статус сертификата и сколько дней осталось до его перевыпуска, используйте команду:
+
+sudo certbot certificates 
+
+Теперь убедитесь, что сертификат будет обновляться автоматически: 
+sudo certbot renew --dry-run 
+
+Вручную сертификат можно обновить командой:
+sudo certbot renew --pre-hook "service nginx stop" --post-hook "service nginx start" 
+
 
 
 Запустите SSH-агент: Убедитесь, что SSH-агент запущен на вашем локальном компьютере и в него добавлен ваш приватный ключ с помощью ssh-add ...
