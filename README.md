@@ -33,6 +33,7 @@ DEBUG=False
 ALLOWED_HOSTS='your_domain'
 
 ### Создание Docker-образов
+docker start db
 
 1.  Замените username на ваш логин на DockerHub:
 
@@ -53,7 +54,6 @@ ALLOWED_HOSTS='your_domain'
     docker push alex886/kittygram_gateway:latest
     ```
     sudo docker container ls
-### Деплой на сервере
 
 1. Подключитесь к удаленному серверу
 
@@ -98,7 +98,8 @@ key NRjeSf
 
  scp -i /home/ea703557/Загрузки/555/yc-ea703557 .env  yc-user@158.160.28.33:/home/yc-user/kittygram/.env
     ```
-
+docker compose -f docker-compose.production.yml up
+docker compose up
 Далее выполняем последовательно
 sudo docker compose -f docker-compose.production.yml pull
 sudo docker compose -f docker-compose.production.yml down
@@ -110,6 +111,9 @@ sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/col
 Создаем суперпользователся. Следуем инструкциям при выполнении.
 
 sudo docker compose -f docker-compose.production.yml exec backend python manage.py createsuperuser
+
+запускаем 
+docker compose -f docker-compose.production.yml up
 
     ```
 Certbot - это инструмент, разработанный Let's Encrypt, который упрощает получение и установку SSL-сертификатов. Вы можете установить Certbot на своем сервере с помощью команды:
@@ -220,3 +224,25 @@ eval "$(ssh-agent -s)"
 ssh-add 
 
 ssh-add ~/.ssh/authorized_keys 
+
+полезное 
+
+sudo apt upgrade
+
+посмотреть все докер образы на сервере\
+
+
+
+sudo docker images
+
+sudo docker ps -a
+
+sudo docker stop Image
+sudo docker rmi Image Image
+
+
+удалит все докер образы на сервере которые не используются
+
+sudo docker rmi -f $(sudo docker images -q)
+
+
