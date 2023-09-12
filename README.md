@@ -113,7 +113,7 @@ sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/col
 sudo docker compose -f docker-compose.production.yml exec backend python manage.py createsuperuser
 
 запускаем 
-docker compose -f docker-compose.production.yml up
+sudo docker compose -f docker-compose.production.yml up
 
     ```
 Certbot - это инструмент, разработанный Let's Encrypt, который упрощает получение и установку SSL-сертификатов. Вы можете установить Certbot на своем сервере с помощью команды:
@@ -242,6 +242,7 @@ sudo docker rmi Image Image
 
 
 удалит все докер образы на сервере которые не используются
+sudo docker system prune 
 
 sudo docker rmi -f $(sudo docker images -q)
 
