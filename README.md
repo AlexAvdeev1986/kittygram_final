@@ -238,6 +238,7 @@ sudo docker images
 sudo docker ps -a
 
 sudo docker stop Image
+sudo docker rm Image
 sudo docker rmi Image Image
 
 
