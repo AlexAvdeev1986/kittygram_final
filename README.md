@@ -58,7 +58,7 @@ docker start db
 1. Подключитесь к удаленному серверу
 
     ```bash
-    ssh -i /home/ea703557/Загрузки/555/yc-ea703557 yc-user@158.160.28.33
+    ssh -i /home/ea703557/Загрузки/555/yc-ea703557 yc-user@158.160.8.70
 key NRjeSf
  имя_пользователя@ip_адрес_сервера 
     ```
@@ -89,14 +89,14 @@ key NRjeSf
     * username — ваше имя пользователя на сервере;
     * server_ip — IP вашего сервера.g
     ```bash
-    ssh -i /home/ea703557/Загрузки/555/yc-ea703557 yc-user@158.160.28.33
+    ssh -i /home/ea703557/Загрузки/555/yc-ea703557 yc-user@158.160.8.70
 key NRjeSf
  имя_пользователя@ip_адрес_сервера 
     ```
 
- scp -i /home/ea703557/Загрузки/555/yc-ea703557 docker-compose.production.yml  yc-user@158.160.28.33:/home/yc-user/kittygram/docker-compose.production.yml
+ scp -i /home/ea703557/Загрузки/555/yc-ea703557 docker-compose.production.yml  yc-user@158.160.8.70:/home/yc-user/kittygram/docker-compose.production.yml
 
- scp -i /home/ea703557/Загрузки/555/yc-ea703557 .env  yc-user@158.160.28.33:/home/yc-user/kittygram/.env
+ scp -i /home/ea703557/Загрузки/555/yc-ea703557 .env  yc-user@158.160.8.70:/home/yc-user/kittygram/.env
     ```
 docker compose -f docker-compose.production.yml up
 docker compose up
@@ -113,6 +113,7 @@ sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/col
 sudo docker compose -f docker-compose.production.yml exec backend python manage.py createsuperuser
 
 запускаем 
+docker compose up
 sudo docker compose -f docker-compose.production.yml up
 
     ```
@@ -126,7 +127,7 @@ sudo apt install certbot
 
 7. На сервере в редакторе nano откройте конфиг Nginx:
 ```bash
-    ssh -i /home/ea703557/Загрузки/555/yc-ea703557 yc-user@158.160.28.33
+    ssh -i /home/ea703557/Загрузки/555/yc-ea703557 yc-user@158.160.8.70
 key NRjeSf
  имя_пользователя@ip_адрес_сервера 
     ```
