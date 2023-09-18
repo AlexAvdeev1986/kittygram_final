@@ -98,9 +98,8 @@ key NRjeSf
 
  scp -i /home/ea703557/Загрузки/555/yc-ea703557 .env  yc-user@158.160.8.70:/home/yc-user/kittygram/.env
     ```
-docker compose -f docker-compose.production.yml up
-docker compose up
-Далее выполняем последовательно
+
+Далее выполняем последовательно на своем компьютере потом на сервере.
 sudo docker compose -f docker-compose.production.yml pull
 sudo docker compose -f docker-compose.production.yml down
 sudo docker compose -f docker-compose.production.yml up -d
@@ -116,6 +115,8 @@ sudo docker compose -f docker-compose.production.yml exec backend python manage.
 docker compose up
 sudo docker compose -f docker-compose.production.yml up
 
+ docker run -e POSTGRES_PASSWORD=kittygram_password -e POSTGRES_USER=kittygram_user postgres:13
+
     ```
 Certbot - это инструмент, разработанный Let's Encrypt, который упрощает получение и установку SSL-сертификатов. Вы можете установить Certbot на своем сервере с помощью команды:
 sql
@@ -129,11 +130,7 @@ sudo apt install certbot
 ```bash
     ssh -i /home/ea703557/Загрузки/555/yc-ea703557 yc-user@158.160.8.70
 key NRjeSf
- имя_пользователя@ip_адрес_сервера 
-    ```
-    ```bash
-    sudo nano /etc/nginx/sites-enabled/default
-    ```
+
 ...8Устанавливаем и настраиваем NGINX
 Устанавливаем NGINX....
 
@@ -145,22 +142,17 @@ sudo ufw allow 'Nginx Full'
 sudo ufw allow OpenSSH
 Включаем firewall
 sudo ufw enable
-Открываем конфигурационный файл NGINX
+
+...Открываем конфигурационный файл NGINX
 sudo nano /etc/nginx/sites-enabled/default
-Полностью удаляем из него все и пишем новые настройки
+Полностью удаляем из него все и пишем новые настройки...
 
-server {
-    listen 80;
-    server_name example.com;
-    
-    location / {
-        proxy_set_header HOST $host;
-        proxy_pass http://127.0.0.1:9000;
+1.Пример файла nginx находится в default
 
-    }
-}
-Сохраняем изменения и выходим из редактора
-Проверяем корректность настроек
+
+
+...Сохраняем изменения и выходим из редактора
+Проверяем корректность настроек...
 sudo nginx -t
 
 Запускаем NGINX
